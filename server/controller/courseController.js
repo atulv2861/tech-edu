@@ -145,7 +145,7 @@ class CourseController{
                     }
                   ]
             ]
-            //console.log(JSON.stringify(pipleline))
+           
             const courses = await EnrollCourse.aggregate(pipleline)
             const count = await EnrollCourse.countDocuments({userEmail:email});
             res.status(200).json({

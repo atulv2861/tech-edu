@@ -3,7 +3,7 @@ import { toast,Zoom } from 'react-toastify';
 
 
 export const successNotification = (message)=>{
-    toast.success(message, {
+    toast(message, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -11,22 +11,20 @@ export const successNotification = (message)=>{
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
-        // eslint-disable-next-line no-undef
+        theme: "light",       
         transition: Zoom,
         });
 }
  export const errorNotification = (message)=>{
     toast.error(message, {
         position: "top-right",
-        autoClose: 12,
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
-         // eslint-disable-next-line no-undef
+        theme: "light",        
         transition: Zoom,
         });
 }

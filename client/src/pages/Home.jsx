@@ -10,9 +10,9 @@ const Home = () => {
   const [fetchEnrollCourse, setFetcEnrollCourse] = useState(true);
   const [courses, coursesData] = useState(false);
   const [createCourse, setCreateCourse] = useState();
-    
+  const [page, setPage] = useState(0);
   const getcourses = async(page =0)=>{
-       const data = await fetchAllCourses(page)
+       const data = await fetchAllCourses(page);       
        if(data){
         coursesData(data)
        }
@@ -26,10 +26,11 @@ const Home = () => {
   };
   useEffect(() => {
     if (fetchEnrollCourse) {
-      getcourses();
+      getcourses(0);
     } else {
       getsubscribedCourse(0);
     }
+    setPage(0);
   }, [fetchEnrollCourse]);
 
   const handleCourseToggle = (val) => {
@@ -65,6 +66,8 @@ const Home = () => {
           email={email}
           handleEnrollToCourse={handleEnrollToCourse}
           fetchEnrollCourse={fetchEnrollCourse}
+          setPage={setPage}
+          page={page}
         />
       ) : (
         <div>No course found!!!</div>

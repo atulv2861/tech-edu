@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import CourseCard from '../Card/CourseCard';
 import './CoursesList.css'; // Import the custom CSS file
 
-const CoursesList = ({ allCourses,email, getAllCourses,handleEnrollToCourse,fetchEnrollCourse }) => {
-  const [page, setPage] = useState(0);
+const CoursesList = ({ allCourses,email, getAllCourses,handleEnrollToCourse,fetchEnrollCourse,setPage,page }) => {
+  
   const pageSize = 4;
 
   const nextPage = () =>{
@@ -20,7 +20,7 @@ const CoursesList = ({ allCourses,email, getAllCourses,handleEnrollToCourse,fetc
         return newPage;   
 
     });
-  }
+  }  
 
   return (
     <div className="courses-list-container">
@@ -35,7 +35,7 @@ const CoursesList = ({ allCourses,email, getAllCourses,handleEnrollToCourse,fetc
           Previous
         </button>
         <span className="page-info">{page + 1}</span>
-        <button onClick={()=>nextPage()} disabled={allCourses?.courses?.length < pageSize} className="pagination-button">
+        <button onClick={()=>nextPage()} disabled={allCourses?.totalCount <= pageSize*(page+1)} className="pagination-button">
           Next
         </button>
       </div>

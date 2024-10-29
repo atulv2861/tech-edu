@@ -9,11 +9,11 @@ export const fetchAllCourses = async (page = 0) => {
   try {
     const { data } = await axios.get(
       `${URL}/course/getAllcourses?page=${page}`
-    );
+    );    
     if (data?.success) {      
       return {
         courses: data.courses,
-        totalCourses: data.totalCourses,
+        totalCount: data.totalCount        ,
       };
     } else {
       errorNotification(data.message);
@@ -31,7 +31,7 @@ export const fetchSubscribedCourses = async (email, page) => {
     if (data?.success) {      
       return {
         courses: data.courses,
-        totalCourses: data.totalCourses,
+        totalCount: data.totalCount,
       };
     } else {
       errorNotification(data.message);
@@ -74,8 +74,7 @@ export const createCourse = async (courseData) => {
 export const fetchCourseByID = async (courseId) => {
   try {
     const { data } = await axios.get(`${URL}/course/getCourseById/${courseId}`);
-    if (data?.success) {
-      successNotification(data.message);
+    if (data?.success) {      
       return data?.course;
     } else {
       errorNotification(data.message);
@@ -89,8 +88,7 @@ export const fetchSubscribedCourseByID = async (courseId, email) => {
     const { data } = await axios.get(
       `${URL}/course/getEnrolledCourseById?email=${email}&courseId=${courseId}`
     );
-    if (data?.success) {
-      successNotification(data.message);
+    if (data?.success) {      
       return data?.course;
     } else {
       errorNotification(data.message);
