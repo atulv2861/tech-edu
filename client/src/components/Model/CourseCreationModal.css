@@ -1,0 +1,81 @@
+.course-creation-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .course-creation-modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .course-creation-modal-content h3 {
+    margin-top: 0;
+  }
+  
+  .course-creation-modal-content label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .course-creation-input,
+  .course-creation-textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .course-creation-file-input {
+    margin-top: 0.5rem;
+  }
+  
+  .course-creation-image-preview {
+    display: flex;
+    margin-top: 1rem;
+  }
+  
+  .course-creation-preview-img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+  
+  .course-creation-submit-button,
+  .course-creation-cancel-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .course-creation-submit-button {
+    background-color: #007bff;
+  }
+  
+  .course-creation-cancel-button {
+    background-color: #6c757d;
+    margin-left: 10px;
+  }
+  
+  .course-creation-submit-button:hover,
+  .course-creation-cancel-button:hover {
+    opacity: 0.9;
+  }
+  

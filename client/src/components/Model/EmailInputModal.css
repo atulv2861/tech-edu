@@ -1,0 +1,67 @@
+.email-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .email-modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    transform: scale(0.9);
+  }
+  
+  .email-modal-content h2 {
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .email-modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  
+  .email-modal-content input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .email-modal-content .button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .email-modal-content .button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 400px) {
+    .email-modal-content {
+      width: 90%;
+    }
+  }
+  
